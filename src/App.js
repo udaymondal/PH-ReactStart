@@ -2,21 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  var singer = 'Dr. King Vozed'
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit done <code>src/App.js</code> and save to reload & pushed to github.
-        </p> 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React :: Started
-        </a>
+        <h1>My heading</h1>
+        <h5>testing cal:  {2+6}</h5>
+        <p>My first react paragraph</p>
+        <p>singer for to day {singer}</p>
       </header>
     </div>
   );
