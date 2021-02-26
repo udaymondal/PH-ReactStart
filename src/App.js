@@ -20,12 +20,16 @@ function App() {
   // var styleAnotherWay = {
   //   backgroundColor: 'goldenrod'
   // }
-  const nayoks = ['Manna', 'Illias', 'Salman'];
+  const nayoks = ['Manna', 'Illias', 'Salman', 'Alomgir','Bappi', 'Samrat','Sakib'];
   const products = [
     {name: 'Photoshop', price: '$90.69'},
     {name: 'Illustrator', price: '$70.15'},
     {name: 'PDF', price: '$8.25'},
   ];
+  // const nayokNames = nayoks.map(nayok => nayok);
+  // console.log(nayokNames);
+  const productNames = products.map(product => product.name);
+  console.log(productNames);
   return (
     <div className="App">
       <header className="App-header">
@@ -47,6 +51,18 @@ function App() {
         <Product product={products[0]}></Product>
         <Product product={products[1]}></Product>
         <Product product={products[2]}></Product>
+
+        <ul>
+          {
+            nayoks.map(nayok => <li>{nayok}</li>)
+          }
+          {
+            products.map(product=> <li>{product.name}--Price--{product.price}</li>)
+          }
+          {
+            products.map(pd => <Product product={pd}></Product>)
+          }
+        </ul>
       </header>
     </div>
   );
@@ -59,7 +75,9 @@ function Product(props){
     backgroundColor: 'goldenrod',
     height: '200px',
     width: '200px',
-    float: 'left'
+    float: 'left',
+    margin: '20px',
+    padding: '10px'
     // boxSizing: 'border-box',
     // float: 'left',
     // width: '33.33%',
@@ -76,7 +94,7 @@ function Product(props){
 }
 
 function Person(props){
-  console.log(props);
+  // console.log(props);
   return (
     <div style={{
       backgroundColor: "green",
