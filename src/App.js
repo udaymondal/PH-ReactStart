@@ -20,7 +20,12 @@ function App() {
   // var styleAnotherWay = {
   //   backgroundColor: 'goldenrod'
   // }
-  const nayoks = ['Manna', 'Illias', 'Salman']
+  const nayoks = ['Manna', 'Illias', 'Salman'];
+  const products = [
+    {name: 'Photoshop', price: '$90.69'},
+    {name: 'Illustrator', price: '$70.15'},
+    {name: 'PDF', price: '$8.25'},
+  ];
   return (
     <div className="App">
       <header className="App-header">
@@ -38,9 +43,36 @@ function App() {
         <Person name="BappaRazz" nayika=""></Person>
         <Person name="Misha Shoudagor" nayika="Maal"></Person>
         <Person name={nayoks[1]}></Person>
+
+        <Product product={products[0]}></Product>
+        <Product product={products[1]}></Product>
+        <Product product={products[2]}></Product>
       </header>
     </div>
   );
+}
+
+function Product(props){
+  const productStyle={
+    border: '1px solid gray',
+    borderRadius: '5px',
+    backgroundColor: 'goldenrod',
+    height: '200px',
+    width: '200px',
+    float: 'left'
+    // boxSizing: 'border-box',
+    // float: 'left',
+    // width: '33.33%',
+    // padding: '50px',
+  }
+  const {name, price} = props.product;
+  return(
+    <div style={productStyle}>
+      <h2>{name}</h2>
+      <h3>{price}</h3>
+      <button>Buy Now</button>
+    </div>
+  )
 }
 
 function Person(props){
