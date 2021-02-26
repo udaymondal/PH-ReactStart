@@ -33,13 +33,26 @@ function App() {
         <h5 className="actorColor">{actor.movieName} is having jhamela with {singer.fullName}</h5>
         <h5 style={styleAnotherWay}>One is {singer.age} years old and one is {person.age+actor.age} years old </h5>
         <Person></Person>
+        <Person></Person>
+        <Person></Person>
+        <Person></Person>
       </header>
     </div>
   );
 }
 
 function Person(){
-  return <h1 style={{background: "tomato"}}>Name: Called from another function</h1>
+  return (
+    <div style={{
+      backgroundColor: "green",
+      border: "2px solid black",
+      margin: "10px",
+      padding: "10px"
+      }}>
+      <h3>Name: Called from another function</h3>
+      <h5>Person is called</h5>
+    </div>
+  )
 }
 
 export default App;
