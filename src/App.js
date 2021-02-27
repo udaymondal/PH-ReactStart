@@ -111,7 +111,7 @@ function Person(props){
 }
 
 function Counter(){
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(0);
   const handleIncrease = () => {
     // const newCount = count + 1;
     // setCount(newCount);
@@ -122,6 +122,14 @@ function Counter(){
       <h3>Count: {count}</h3>
       <button onClick={() => setCount(count-1)}>Decrease</button>
       <button onClick={handleIncrease}>Increase</button>
+    </div>
+  )
+}
+
+function Users(){
+  return(
+    <div>
+      <h3>Dynamic User: </h3>
     </div>
   )
 }
