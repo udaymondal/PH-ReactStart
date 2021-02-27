@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   // var person= {
@@ -40,7 +40,7 @@ function App() {
         <p>My first react paragraph</p><br/>
         <Counter></Counter>
         {/* <p>singer for to day {singer}</p> */}
-
+        <Users></Users>
         <h3>VVIP BD</h3>
         {/* <h5 className="actorColor">{actor.movieName} is having jhamela with {singer.fullName}</h5>
         <h5 style={styleAnotherWay}>One is {singer.age} years old and one is {person.age+actor.age} years old </h5> */}
@@ -127,9 +127,22 @@ function Counter(){
 }
 
 function Users(){
+  const [users, setUsers] = useState([]);
+  
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res =>res.json())
+    .then(data => setUsers(data));
+  },[])
+
   return(
     <div>
-      <h3>Dynamic User: </h3>
+      <h3>Dynamic User: {users.length}</h3>
+      <ul>
+        {
+          users.map(user => <li>{user.name} lives in {user.address.city}, Contact: {user.phone}</li>)
+        }
+      </ul>
     </div>
   )
 }
