@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
   // var person= {
@@ -37,6 +38,7 @@ function App() {
         <h1 style={{backgroundColor: "blue"}}>My heading</h1>
         <h5>testing cal:  {2+6} </h5>
         <p>My first react paragraph</p><br/>
+        <Counter></Counter>
         {/* <p>singer for to day {singer}</p> */}
 
         <h3>VVIP BD</h3>
@@ -104,6 +106,15 @@ function Person(props){
       }}>
       <h3>Name: {props.name}</h3>
       <h5>Hero of {props.nayika}</h5>
+    </div>
+  )
+}
+
+function Counter(){
+  const [count, setCount] = useState(10);
+  return(
+    <div>
+      <h3>Count: {count}</h3>
     </div>
   )
 }
