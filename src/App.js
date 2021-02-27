@@ -112,9 +112,16 @@ function Person(props){
 
 function Counter(){
   const [count, setCount] = useState(10);
+  const handleIncrease = () => {
+    // const newCount = count + 1;
+    // setCount(newCount);
+    setCount(count + 1);
+  }
   return(
     <div>
       <h3>Count: {count}</h3>
+      <button onClick={() => setCount(count-1)}>Decrease</button>
+      <button onClick={handleIncrease}>Increase</button>
     </div>
   )
 }
